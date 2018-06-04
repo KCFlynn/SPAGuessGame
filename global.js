@@ -112,6 +112,7 @@ function calculate() {
     }
     if(state.current_score >= 20.0) {
         state.current_score = userArray[state.current_index].playerScore = 0;  // set player back to 0
+        modifyUser();
         document.location.href = "index.html#WinPage";
     }
 }
@@ -124,7 +125,7 @@ function GetNewScore(score) {
     
     var avg = sum / userArray.length;
 
- if (avg == userArray[state.current_index].MongoGuess)
+ if (avg == userArray[state.current_index].MongoGuess.val())
  {
      score = score + 10;
      score = score + state.current_score;
