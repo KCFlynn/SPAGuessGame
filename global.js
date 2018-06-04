@@ -46,7 +46,8 @@ function createList() {
     $('#playerul').empty(); // don't want to keep adding old li s to old li s 
      userArray.forEach(function(element) {
             var playerInfo = element.MongoName + "_" + element.MongoKnownVal + "_" + element.MongoGuess+ "_" + element.MongoScore
-            $('#playerul').append('<li><a data-transition="pop" class="onePlayer" data-parm=' + playerInfo + '</a></li>' );
+            $('#playerul').append('<li><a data-transition="pop" class="onePlayer" data-parm=' + 
+                playerInfo + '</a></li>' );
         });
     $('#playerul').listview('refresh');
     });
