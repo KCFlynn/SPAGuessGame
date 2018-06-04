@@ -76,7 +76,7 @@ var PlayerObject = function(pName, pKnownVal, pGuess, pScore) {
   
 // Add User
 function addNewUser(event) {
-  event.preventDefault();
+  // event.preventDefault();
   // Super basic validation - increase errorCount variable if any fields are blank
   var errorCount = 0;
   $('#create').each(function(index, val) {
@@ -84,7 +84,7 @@ function addNewUser(event) {
   });
 
   // Check and make sure errorCount's still at zero
-  if(errorCount === 0) {
+  if(errorCount === 1) {
 
     // If it is, compile all user info into one object
     var newUser = new PlayerObject($('#name').val(), $('#knownVal').val(), $('#guess').val(), 0)
@@ -93,7 +93,7 @@ function addNewUser(event) {
     $.ajax({
       type: 'POST',
       data: newUser,
-      url: '/users/adduser',
+      url: '/users/addnewuser',
   dataType: 'JSON'
     }).done(function( response ) {
       if (response.msg === '') {

@@ -5,7 +5,7 @@ var router = express.Router();
 router.post('/addnewuser', function(req, res) {
 
   var db = req.db;
-  var collection = db.get('userlist');
+  var collection = db.get('playerlist');
   collection.insert(req.body, function(err, result){
     res.send(
       (err === null) ? { msg: '' } : { msg: err }
