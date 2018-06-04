@@ -116,7 +116,7 @@ function setCurrent_index(playerInfo) {
 // Modify User
 function modifyUser(event) {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state.current_index]._id;
+  var userID =  userArray[state.current_index].$id;
   // do our modify on the server
   $.ajax({
     type: 'PUT',
