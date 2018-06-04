@@ -113,7 +113,7 @@ function addNewUser(){
     $.ajax({
         type: 'POST',
         data: newUser,
-        url: '/users/adduser',
+        url: '/users/addnewuser',
         dataType: 'JSON'
     }).done(function( response ) {
         if (response.msg === '') {
