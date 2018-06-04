@@ -73,17 +73,14 @@
     </div>
        
     <!--Win page-->
-    <div data-role="page" id="WinPage">
+    <div data-role="page" id="WinPage" id="listOfPlayers">
 
         <div data-role="header"data-theme="a">
             <h1>Guess the Average</h1>                          
         </div>
-
-        <div data-role="content"data-theme="a">    
-            <div id="userlist">
+        <div id="userlist">
                <ul data-role = "listview" id = "playerul"></ul>
-            </div><br /><br /><br />
-                 
+            </div><br /><br /><br />       
             <p><span id="status"></span><br/>
                 Your Score is <span id="score"></span></p>
             <a href="#Home" data-role="button" data-transition='pop' >Play Again</a>
