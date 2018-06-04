@@ -102,7 +102,7 @@ function addNewUser(event) {
         $('#knownVal').val('');
         $('#guess').val('');
         // Update the table
-        //createList();
+        createList();
       }
       else {
         // If something goes wrong, alert the error message that our service returned
@@ -115,6 +115,7 @@ function addNewUser(event) {
     alert('Please fill in all fields');
     return false;
   }
+    
 };
     
 /*function setCurrent_index(playerInfo) {
