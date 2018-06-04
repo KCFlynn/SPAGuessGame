@@ -35,9 +35,9 @@ var PlayerObject = function(pName, pKnownVal, pGuess, pScore) {
  this.MongoKnownVal = pKnownVal;
  this.MongoGuess = pGuess;
  this.MongoScore = pScore;
-    
+};
 // Fill table with data
-/*function createList() {
+function createList() {
 
   // jQuery AJAX call for JSON
   $.getJSON( '/users/userlist', function( data ) {
@@ -50,7 +50,7 @@ var PlayerObject = function(pName, pKnownVal, pGuess, pScore) {
                 playerInfo + ' href="#playerlist" > ' + playerInfo + '</a></li>' );
         });
     $('#playerul').listview('refresh');
-    });*/
+    });
 };  // end of createList
 
 // Show User Info
