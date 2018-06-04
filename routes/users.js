@@ -14,7 +14,7 @@ router.post('/addnewuser', function(req, res) {
 
 
 /* GET userlist. */
-router.get('/userlist', function(req, res) {
+router.get('/createlist', function(req, res) {
   var db = req.db;
    var collection = db.get('playerlist');
    collection.find({},{},function(e,docs){
