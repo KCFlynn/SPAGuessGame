@@ -3,6 +3,7 @@ var router = express.Router();
 
 /* POST to adduser. */
 router.post('/adduser', function(req, res) {
+    //alert("hello!");
   var db = req.db;
   var collection = db.get('playerlist');
   collection.insert(req.body, function(err, result){
