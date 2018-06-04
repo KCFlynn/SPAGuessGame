@@ -52,27 +52,6 @@ function createList() {
     $('#playerul').listview('refresh');
     });
 };  // end of createList
-
-// Show User Info
-/*function showUserInfo(event){
-    // Prevent Link from Firing// Username link click$('#userList table tbody').on('click','td a.linkshowuser', showUserInfo);
-    event.preventDefault();
-    
-    // Retrieve username from link rel attribute
-    var thisUserName = $(this).attr('rel');
-    // Get Index of object based on id value
-    var arrayPosition = userArray.map(function(arrayItem){
-        return arrayItem.username;}).indexOf(thisUserName);
-        // Get our User Object
-    var thisUserObject = userArray[arrayPosition];
-    //Populate Info BoxshowUserInfo
-    $('#userInfoName').text(thisUserObject.fullname);
-    $('#userInfoAge').text(thisUserObject.age);
-    $('#userInfoGender').text(thisUserObject.gender);
-    $('#userInfoLocation').text(thisUserObject.location);
-    // add for modify user name
-    $('#modifyUserName').val(thisUserObject.fullname);
-};*/
   
 // Add User
 function addNewUser(event) {
@@ -118,10 +97,10 @@ function addNewUser(event) {
     
 };
     
-/*function setCurrent_index(playerInfo) {
+function setCurrent_index(playerInfo) {
     var pointer = 0;
     userArray.forEach(function(element) {
-        if( (userArray[pointer].MongoName + "_" + userArray[pointer].MongoKnownVal + "_" + userArray[pointer].MongoGuess) == playerInfo )  {
+        if( (userArray[pointer].MongoName + " No.Entered: " + userArray[pointer].MongoKnownVal + " Guess: " + userArray[pointer].MongoGuess + " Score: " + userArray[pointer].MongoScore) == playerInfo )  {
             state.current_index = pointer;
             return;
         }
@@ -168,8 +147,8 @@ function deleteUser(event) {
 
 // Modify User
 function modifyUser(event) {
-  var oldName =  $('#modifyUserName').val();
-  var newName =  $('#newUserName').val();
+  var oldScore =  $('#modifyUserScore').val();
+  var newScore =  $('#newScore').val();
   // do our modify on the server
   $.ajax({
     type: 'PUT',
@@ -179,4 +158,4 @@ function modifyUser(event) {
       var newName =  $('#newUserName').val('');
       window.location.reload()
   })
-};*/
+};
