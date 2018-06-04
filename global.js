@@ -98,6 +98,32 @@ function addNewUser(event) {
   }
     
 };
+function GetNewScore(score) {    
+    var sum = 0;
+    userArray.forEach(function(element) {
+        sum = sum + this.MongoKnownVal;
+    });
+    
+    var avg = sum / userArray.length;
+
+ if (avg == userArray[state.current_index].MongoGuess)
+ {
+     score = score + 10;
+     score = score + state.current_score;
+     (document.getElementById("status")).innerText = "You Win!";
+ }
+ else {
+     score = state.current_score;
+     (document.getElementById("status")).innerText = "You Lost!";
+ }
+ return score;
+}
+
+/*function RollDice(dice) {
+ dice[0] = Math.floor((Math.random() * 6) + 1);
+ dice[1] = Math.floor((Math.random() * 6) + 1);
+}  
+*/
     
 function setCurrent_index(playerInfo) {
     var pointer = 0;
@@ -116,7 +142,7 @@ function setCurrent_index(playerInfo) {
 // Modify User
 function modifyUser(event) {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state.current_index].$id;
+  var userID =  userArray[state.current_index]._id;
   // do our modify on the server
   $.ajax({
     type: 'PUT',
