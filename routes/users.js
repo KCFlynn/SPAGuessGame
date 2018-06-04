@@ -3,7 +3,6 @@ var router = express.Router();
 
 /* POST to adduser. */
 router.post('/addnewuser', function(req, res) {
-
   var db = req.db;
   var collection = db.get('playerlist');
   collection.insert(req.body, function(err, result){
@@ -50,7 +49,7 @@ router.get('/userlist', function(req, res) {
     });
 });*/
 /* Modify a user */
-router.put('/updateuser/:id', function(req, res) {
+/*router.put('/updateuser/:id', function(req, res) {
   var db = req.db;
   var collection = db.get('playerlist');
   var userToUpdate = req.params.id;
@@ -64,7 +63,7 @@ router.put('/updateuser/:id', function(req, res) {
       (err === null) ? { msg: '' } : { msg: err }
     );
     });
-});
+});*/
 
 
 module.exports = router;
