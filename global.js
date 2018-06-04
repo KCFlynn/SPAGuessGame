@@ -45,7 +45,7 @@ function createList() {
     userArray = data;
     $('#playerul').empty(); // don't want to keep adding old li s to old li s 
      userArray.forEach(function(element) {
-            var playerInfo = "Name: " + element.MongoName + " # Entered: " + element.MongoKnownVal + "Guess: " + element.MongoGuess+ "Score: " + element.MongoScore
+            var playerInfo = element.MongoName + " # Entered: " + element.MongoKnownVal + "Guess: " + element.MongoGuess+ "Score: " + element.MongoScore
             $('#playerul').append('<li><a data-transition="pop" class="onePlayer" data-parm=' + 
                 playerInfo + ' href="#playerlist" > ' + playerInfo + '</a></li>' );
         });
