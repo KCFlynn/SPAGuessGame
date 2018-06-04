@@ -4,6 +4,7 @@ var userArray = [];
 // DOM Ready =============================================================
 $(document).ready(function() {
 
+    userArray.length = 0;
   // Populate the user table on initial page load
   //createList();
 
@@ -27,7 +28,6 @@ $(document).ready(function() {
 // Functions =============================================================
 var state = {
     current_index: 999,  // these values better get set before we use them
-    //current_balance: 20.20,
     current_score: 0,
     current_playerInfo: "?"
 }
@@ -57,7 +57,6 @@ function createList() {
   
 // Add User
 function addNewUser(event) {
-  // event.preventDefault();
   // Super basic validation - increase errorCount variable if any fields are blank
   var errorCount = 0;
   $('#create').each(function(index, val) {
@@ -100,7 +99,7 @@ function addNewUser(event) {
 };
 
 function calculate() {
-    state.current_score = GetNewBalance(state.current_score);  // run one cycle of the game
+    state.current_score = GetNewScore(state.current_score);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
     if(state.current_score <= 0) {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
