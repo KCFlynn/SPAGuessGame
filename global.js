@@ -40,7 +40,7 @@ var PlayerObject = function(pName, pKnownVal, pGuess, pScore) {
 function createList() {
 
   // jQuery AJAX call for JSON
-  $.getJSON( '/users/userlist', function( data ) {
+  $.getJSON( '/users/createlist', function( data ) {
     userArray.length = 0;
     userArray = data;
     $('#playerul').empty(); // don't want to keep adding old li s to old li s 
