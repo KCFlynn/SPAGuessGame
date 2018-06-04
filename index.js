@@ -88,7 +88,7 @@ var PlayerObject = function(pName, pKnownVal, pGuess, pScore) {
 function createList() {
     // first load array from Mongo
     // jQuery AJAX call for JSON
-    $.getJSON( '/users/userlist', function( data ) {
+    $.getJSON( '/users/playerlist', function( data ) {
         userArray.length = 0;  // clear array
         userArray = data;
         // For each item in our JSON, add an element in our local array
