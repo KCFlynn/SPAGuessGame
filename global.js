@@ -98,6 +98,25 @@ function addNewUser(event) {
   }
     
 };
+
+function calculate() {
+    state.current_score = GetNewBalance(state.current_score);  // run one cycle of the game
+    (document.getElementById("score")).innerText = (state.current_score).toString();
+    if(state.current_score <= 0) {
+        //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
+        setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
+        state.currentPlayerInfo = ""; 
+        state.current_score = userArray[state.current_index].playerScore = 0.0;
+        // delete them from Mongo rigth here
+       //deleteuser();
+        document.location.href = "index.html#LosePage";  // take player to lose page
+    }
+    if(state.current_score >= 20.0) {
+        state.current_score = userArray[state.current_index].playerScore = 0;  // set player back to 0
+        document.location.href = "index.html#WinPage";
+    }
+}
+
 function GetNewScore(score) {    
     var sum = 0;
     userArray.forEach(function(element) {
@@ -118,12 +137,6 @@ function GetNewScore(score) {
  }
  return score;
 }
-
-/*function RollDice(dice) {
- dice[0] = Math.floor((Math.random() * 6) + 1);
- dice[1] = Math.floor((Math.random() * 6) + 1);
-}  
-*/
     
 function setCurrent_index(playerInfo) {
     var pointer = 0;
