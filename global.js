@@ -111,6 +111,26 @@ function setCurrent_index(playerInfo) {
     });
 };
 
+// Modify User
+function modifyUser(event) {
+  var playerScore =  parseInt(state.current_score);
+  var userID =  userArray[state.current_index]._id;
+  // do our modify on the server
+  $.ajax({
+    type: 'PUT',
+    url: '/users/updateuser/' + userID + '*' + playerScore  // passsing 2 arguements as one
+    }).done(function( response ) {
+      if(response.msg === ''){
+          
+          document.location.href = "#listOfPlayers";
+      }
+      else{
+          alert('Error: ' + response.msg);
+      }
+      
+  })
+    document.location.href = "#Home";
+};
 
 // Delete User
 function deleteUser(event) {
@@ -143,19 +163,4 @@ function deleteUser(event) {
     // If they said no to the confirm, do nothing
     return false;
   }
-};
-
-// Modify User
-function modifyUser(event) {
-  var oldScore =  $('#modifyUserScore').val();
-  var newScore =  $('#newScore').val();
-  // do our modify on the server
-  $.ajax({
-    type: 'PUT',
-    url: '/users/modifyuser/' + oldName + '*' +newName  // passsing 2 arguements as one
-    }).done(function( response ) {
-      var oldName =  $('#modifyUserName').val('');
-      var newName =  $('#newUserName').val('');
-      window.location.reload()
-  })
 };

@@ -49,7 +49,7 @@ router.get('/createlist', function(req, res) {
     });
 });*/
 /* Modify a user */
-/*router.put('/updateuser/:id', function(req, res) {
+router.put('/updateuser/:id', function(req, res) {
   var db = req.db;
   var collection = db.get('playerlist');
   var userToUpdate = req.params.id;
@@ -63,7 +63,7 @@ router.get('/createlist', function(req, res) {
       (err === null) ? { msg: '' } : { msg: err }
     );
     });
-});*/
+});
 
 
 module.exports = router;
