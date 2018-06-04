@@ -1,15 +1,10 @@
-/*var express = require('express');
+var express = require('express');
 var router = express.Router();
 
 /* POST to adduser. */
-<<<<<<< HEAD
 router.post('/addnewuser', function(req, res) {
-=======
-router.post('/adduser', function(req, res) {
-    //alert("hello!");
->>>>>>> e005594275acba8dca90f05da7167b76aabff396
   var db = req.db;
-  var collection = db.get('userlist');
+  var collection = db.get('playerlist');
   collection.insert(req.body, function(err, result){
     res.send(
       (err === null) ? { msg: '' } : { msg: err }
@@ -54,7 +49,7 @@ router.get('/userlist', function(req, res) {
     });
 });*/
 /* Modify a user */
-router.put('/updateuser/:id', function(req, res) {
+/*router.put('/updateuser/:id', function(req, res) {
   var db = req.db;
   var collection = db.get('playerlist');
   var userToUpdate = req.params.id;
@@ -68,7 +63,7 @@ router.put('/updateuser/:id', function(req, res) {
       (err === null) ? { msg: '' } : { msg: err }
     );
     });
-});
+});*/
 
 
 module.exports = router;
