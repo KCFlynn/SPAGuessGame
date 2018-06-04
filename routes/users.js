@@ -2,12 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* POST to adduser. */
-<<<<<<< HEAD
 router.post('/addnewuser', function(req, res) {
-=======
-router.post('/adduser', function(req, res) {
-    //alert("hello!");
->>>>>>> e005594275acba8dca90f05da7167b76aabff396
+
   var db = req.db;
   var collection = db.get('userlist');
   collection.insert(req.body, function(err, result){
