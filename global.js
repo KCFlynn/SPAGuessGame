@@ -142,7 +142,7 @@ function GetNewScore(score, currentPlayer) {
     alert(currentPlayer);
     alert(state.current_playerInfo);
     
- if (avg == state.current_index.MongoGuess.val())
+ if (avg == state.current_index.MongoGuess)
  {
      score = score + 10;
      score = score + state.current_score;
