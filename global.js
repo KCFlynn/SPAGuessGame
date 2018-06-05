@@ -133,7 +133,7 @@ function calculate() {
 function GetNewScore(score, currentPlayer) { 
     
    
-    userArray.forEach(function(element) {
+    userArray.forEach(function(element) { // we only get through this once time? 
         
     
     //score = state.current_score;
@@ -151,6 +151,8 @@ function GetNewScore(score, currentPlayer) {
  {
      score = score + 10;
      score = score + element.current_score;
+     
+     
      //(document.getElementById("status")).innerText = "You Win!";
  }
  else {
@@ -159,7 +161,7 @@ function GetNewScore(score, currentPlayer) {
      deleteUser();
  }
         });
- return score;
+ return score; 
 }
     
 function setCurrent_index(playerInfo) {
