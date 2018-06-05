@@ -200,7 +200,7 @@ function modifyUser(event) {
 
 // Delete User
 function deleteUser(event) {
-  event.preventDefault();  // think we need this as this page is a form
+  //event.preventDefault();  // think we need this as this page is a form
 
   // Pop up a confirmation dialog
   //var confirmation = confirm('Are you sure you want to delete this user?');
@@ -225,8 +225,8 @@ function deleteUser(event) {
       }
     });
   //}
-  else {
+  //else {
     // If they said no to the confirm, do nothing
     return false;
-  }
+  //}
 };
