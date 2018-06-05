@@ -123,7 +123,7 @@ function calculate() {
         document.location.href = "index.html#LosePage";  // take player to lose page
     }
     if(state.current_score >= 20.0) {
-        state.current_score = userArray[state.current_index].playerScore = 0;  // set player back to 0
+        state.current_score = userArray[state.current_index].MongoScore = 0;  // set player back to 0
         modifyUser();
         document.location.href = "index.html#WinPage";
     }
