@@ -100,12 +100,7 @@ function addNewUser(event) {
 
 function calculate() {
     //alert(state.current_playerInfo);
-    
-    var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
-        state.current_playerInfo = which;
-        setCurrent_index(which);
-    
-    alert(state.current_index);
+ 
     
     
     
@@ -114,6 +109,15 @@ function calculate() {
     if(state.current_score <= 0) {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
         setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
+        
+        
+        var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
+        state.current_playerInfo = which;
+        setCurrent_index(which);
+        
+         alert(state.current_index);
+        
+        
         state.currentPlayerInfo = ""; 
         state.current_score = userArray[state.current_index].playerScore = 0.0;
         // delete them from Mongo rigth here
