@@ -117,7 +117,7 @@ function calculate() {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
         setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
         state.currentPlayerInfo = ""; 
-        state.current_score = userArray[state.current_index].playerScore = 0.0;
+        state.current_score = userArray[state.current_index].playerScore = 0;
         // delete them from Mongo rigth here
         deleteuser();
         document.location.href = "index.html#LosePage";  // take player to lose page
