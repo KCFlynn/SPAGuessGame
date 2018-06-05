@@ -99,7 +99,7 @@ function addNewUser(event) {
 };
 
 function calculate() {
-    state.current_score = GetNewScore(state.current_score);  // run one cycle of the game
+    state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
     if(state.current_score <= 0) {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
@@ -117,7 +117,7 @@ function calculate() {
     }
 }
 
-function GetNewScore(score) {    
+function GetNewScore(score, currentPlayer) {    
     var sum = 0;
     userArray.forEach(function(element) {
         sum = sum + this.MongoKnownVal;
@@ -125,8 +125,8 @@ function GetNewScore(score) {
     
     var avg = sum / userArray.length;
 
-    alert(userArray[state.current_index]);
-    alert(userArray[state.current_index].MongoGuess);
+    alert(currentPlayer);
+    alert(currentPlayer.MongoGuess);
     
  if (avg == userArray[state.current_index].MongoGuess.val())
  {
