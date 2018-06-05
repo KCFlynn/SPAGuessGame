@@ -129,7 +129,9 @@ function calculate() {
     }
 }
 
-function GetNewScore(score, currentPlayer) {    
+function GetNewScore(score, currentPlayer) { 
+    score = state.current_score;
+    currentPlayer = state.current_playerInfo;
     var sum = 0;
     userArray.forEach(function(element) {
         sum = sum + this.MongoKnownVal;
