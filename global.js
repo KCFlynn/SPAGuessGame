@@ -125,6 +125,7 @@ function calculate() {
     if(state.current_score >= 10) {
         //state.current_score = userArray[state.current_index].MongoScore = 0;  // set player back to 0
         modifyUser();
+        (document.getElementById("status")).innerText = "You Win!";
         //document.location.href = "index.html#WinPage";
     }
 }
@@ -133,11 +134,12 @@ function GetNewScore(score, currentPlayer) {
     
    
     userArray.forEach(function(element) {
-        sum = sum + this.MongoKnownVal;
+        
     
-    score = state.current_score;
-    currentPlayer = state.current_playerInfo;
+    //score = state.current_score;
+    //currentPlayer = state.current_playerInfo;
     var sum = 0;
+        sum = sum + this.MongoKnownVal;
     var avg = sum / userArray.length;
 
     //alert(currentPlayer);
@@ -147,11 +149,11 @@ function GetNewScore(score, currentPlayer) {
  {
      score = score + 10;
      score = score + state.current_score;
-     (document.getElementById("status")).innerText = "You Win!";
+     //(document.getElementById("status")).innerText = "You Win!";
  }
  else {
      score = state.current_score;
-     (document.getElementById("status")).innerText = "You Lost!";
+     //(document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
         });
