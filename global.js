@@ -131,13 +131,13 @@ function calculate() {
 
 function GetNewScore(score, currentPlayer) { 
     
+   
+    userArray.forEach(function(element) {
+        sum = sum + this.MongoKnownVal;
+    
     score = state.current_score;
     currentPlayer = state.current_playerInfo;
     var sum = 0;
-    userArray.forEach(function(element) {
-        sum = sum + this.MongoKnownVal;
-    });
-    
     var avg = sum / userArray.length;
 
     //alert(currentPlayer);
@@ -154,6 +154,7 @@ function GetNewScore(score, currentPlayer) {
      (document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
+        });
  return score;
 }
     
