@@ -101,14 +101,7 @@ function addNewUser(event) {
 function calculate() {
     //alert(state.current_playerInfo);
  
-    
-    
-    
-    state.current_score = GetNewScore(state.current_score, userArray[state.current_index]._id);  // run one cycle of the game
-    (document.getElementById("score")).innerText = (state.current_score).toString();
-    if(state.current_score <= 0) {
-        //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
-        setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
+    setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
         
         
         var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
@@ -116,8 +109,13 @@ function calculate() {
         setCurrent_index(which);
         
          alert(state.current_index);
-        
-        
+    
+    
+    state.current_score = GetNewScore(state.current_score, userArray[state.current_index]._id);  // run one cycle of the game
+    (document.getElementById("score")).innerText = (state.current_score).toString();
+    if(state.current_score <= 0) {
+        //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
+        setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
         state.currentPlayerInfo = ""; 
         state.current_score = userArray[state.current_index].playerScore = 0.0;
         // delete them from Mongo rigth here
@@ -158,7 +156,7 @@ function GetNewScore(score, currentPlayer) {
 function setCurrent_index(playerInfo) {
     var pointer = 0;
     userArray.forEach(function(element) {
-        if( (userArray[pointer].MongoName + " No.Entered: " + userArray[pointer].MongoKnownVal + " Guess: " + userArray[pointer].MongoGuess + " Score: " + userArray[pointer].MongoScore) == playerInfo )  {
+        if( (userArray[pointer].MongoName + " No.Entered: " + userArray[pointer].MongoKnownVal + " Guess: " + userArray[pointer].MongoGuess + " Score: " + userArray[pointer].MongoScore) == playerInfo )  { // This is where our code is going wrong and causing the current index to mess up
             state.current_index = pointer;
             return;
         }
