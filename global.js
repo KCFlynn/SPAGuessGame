@@ -139,7 +139,7 @@ function GetNewScore(score, currentPlayer) {
     //score = state.current_score;
     //currentPlayer = state.current_playerInfo;
     var sum = 0;
-        sum = sum + this.MongoKnownVal;
+        sum = sum + element.MongoKnownVal;
     var avg = sum / userArray.length;
 
     //alert(currentPlayer);
