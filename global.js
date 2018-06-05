@@ -125,6 +125,9 @@ function GetNewScore(score) {
     
     var avg = sum / userArray.length;
 
+    alert(userArray[state.current_index]);
+    alert(userArray[state.current_index].MongoGuess);
+    
  if (avg == userArray[state.current_index].MongoGuess.val())
  {
      score = score + 10;
