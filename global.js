@@ -99,6 +99,11 @@ function addNewUser(event) {
 };
 
 function calculate() {
+    
+    alert(state.current_index);
+    
+    
+    
     state.current_score = GetNewScore(state.current_score, userArray[state.current_index]._id);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
     if(state.current_score <= 0) {
