@@ -145,14 +145,14 @@ function GetNewScore(score, currentPlayer) {
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
     
- if (avg === state.current_index.MongoGuess)
+ if (avg === element.MongoGuess)
  {
      score = score + 10;
-     score = score + state.current_score;
+     score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
  }
  else {
-     score = state.current_score;
+     score = element.current_score;
      //(document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
