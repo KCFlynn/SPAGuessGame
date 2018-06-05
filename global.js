@@ -99,6 +99,11 @@ function addNewUser(event) {
 };
 
 function calculate() {
+    alert(state.currentPlayerInfo);
+    
+    var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
+        state.current_playerInfo = which;
+        setCurrent_index(which);
     
     alert(state.current_index);
     
