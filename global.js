@@ -14,7 +14,7 @@ $(document).ready(function() {
   // Add User button click
   $('#create').on('click', addNewUser);
     
-  $('#calc').on('click', GetNewScore);
+  $('#calc').on('click', calculate);
 
   // Delete User link click
   // $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
@@ -98,22 +98,22 @@ function addNewUser(event) {
     
 };
 
-/*function calculate() {
+function calculate() {
     //alert(state.current_playerInfo);
  
-    setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
+  /*  setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
         
         
         var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
         state.current_playerInfo = which;
         setCurrent_index(which);
         
-         alert(state.current_index);
+         alert(state.current_index);*/
     
     
     state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
-   if(state.current_score <= 0) {
+  /*  if(state.current_score <= 0) {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
         setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
         state.currentPlayerInfo = ""; 
@@ -121,17 +121,16 @@ function addNewUser(event) {
         // delete them from Mongo rigth here
         //deleteuser();
         document.location.href = "index.html#LosePage";  // take player to lose page
-    }
+    }*/
     if(state.current_score >= 10) {
         //state.current_score = userArray[state.current_index].MongoScore = 0;  // set player back to 0
         modifyUser();
-        document.location.href = "index.html#WinPage";
+        //document.location.href = "index.html#WinPage";
     }
-}*/
+}
 
 function GetNewScore(score, currentPlayer) { 
-    state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
-    (document.getElementById("score")).innerText = (state.current_score).toString();
+    
     score = state.current_score;
     currentPlayer = state.current_playerInfo;
     var sum = 0;
@@ -141,19 +140,18 @@ function GetNewScore(score, currentPlayer) {
     
     var avg = sum / userArray.length;
 
-   // alert(currentPlayer);
+    //alert(currentPlayer);
     //alert(state.current_playerInfo);
     
- if (avg == state.current_index.MongoGuess)
+ if (avg === state.current_index.MongoGuess)
  {
      score = score + 10;
      score = score + state.current_score;
      (document.getElementById("status")).innerText = "You Win!";
-     modifyUser();
  }
  else {
      score = state.current_score;
-     //(document.getElementById("status")).innerText = "You Lost!";
+     (document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
  return score;
