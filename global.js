@@ -67,7 +67,7 @@ function addNewUser(event) {
   if(errorCount === 1) {
 
     // If it is, compile all user info into one object
-    var newUser = new PlayerObject($('#name').val(), $(parseInt('#knownVal')).val(), $(parseInt('#guess')).val(), 0)
+    var newUser = new PlayerObject($('#name').val(), $('#knownVal').val(), $('#guess').val(), 0)
     
     // Use AJAX to post the object to our adduser service
     $.ajax({
@@ -140,7 +140,8 @@ function GetNewScore(score, currentPlayer) {
     //currentPlayer = state.current_playerInfo;
     var sum = 0;
         sum = sum + element.MongoKnownVal;
-    var avg = Math.round(sum / userArray.length);
+    var sumInt = parseInt(sum);
+    var avg = Math.round(sumInt / userArray.length);
 
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
