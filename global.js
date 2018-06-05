@@ -67,7 +67,7 @@ function addNewUser(event) {
   if(errorCount === 1) {
 
     // If it is, compile all user info into one object
-    var newUser = new PlayerObject($('#name').val(), $('#knownVal').val(), $('#guess').val(), 0)
+    var newUser = new PlayerObject($('#name').val(), $(parseInt('#knownVal')).val(), $(parseInt('#guess')).val(), 0)
     
     // Use AJAX to post the object to our adduser service
     $.ajax({
