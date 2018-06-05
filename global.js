@@ -200,14 +200,14 @@ function modifyUser(event) {
 
 // Delete User
 function deleteUser(event) {
-  //event.preventDefault();  // think we need this as this page is a form
+  event.preventDefault();  // think we need this as this page is a form
 
   // Pop up a confirmation dialog
-  var confirmation = confirm('Are you sure you want to delete this user?');
+  //var confirmation = confirm('Are you sure you want to delete this user?');
   setCurrent_index(state.current_playerInfo)
   var userID = userArray[state.current_index]._id;
   // Check and make sure the user confirmed
-  if (confirmation === true) {
+  //if (confirmation === true) {
 
     // If they did, do our delete
     $.ajax({
@@ -224,7 +224,7 @@ function deleteUser(event) {
         alert('Error: ' + response.msg);
       }
     });
-  }
+  //}
   else {
     // If they said no to the confirm, do nothing
     return false;
