@@ -14,7 +14,7 @@ $(document).ready(function() {
   // Add User button click
   $('#create').on('click', addNewUser);
     
-  $('#calc').on('click', calculate);
+  $('#calc').on('click', GetNewScore);
 
   // Delete User link click
   // $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
