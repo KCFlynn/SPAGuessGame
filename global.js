@@ -140,13 +140,14 @@ function GetNewScore(score, currentPlayer) {
     //currentPlayer = state.current_playerInfo;
     var sum = 0;
         sum = sum + element.MongoKnownVal;
+    var sumGuess = parseInt(element.MongoGuess);
     var sumInt = parseInt(sum);
     var avg = Math.round(sumInt / userArray.length);
 
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
     
- if (avg === element.MongoGuess)
+ if (avg === sumGuess)
  {
      score = score + 10;
      score = score + element.current_score;
