@@ -156,7 +156,7 @@ function GetNewScore(score, currentPlayer) {
 function setCurrent_index(playerInfo) {
     var pointer = 0;
     userArray.forEach(function(element) {
-        if (_id.current_playerInfo + "_" + userArray[pointer].MongoName + "_" + userArray[pointer].MongoKnownVal + "_" + userArray[pointer].MongoGuess + "_" + userArray[pointer].MongoScore == playerInfo) { 
+        if (userArray[pointer].MongoName + "_" + userArray[pointer].MongoKnownVal + "_" + userArray[pointer].MongoGuess + "_" + userArray[pointer].MongoScore == playerInfo) { 
             // This is where our code is going wrong and causing the current index to mess up
             state.current_index = pointer;
             return;
