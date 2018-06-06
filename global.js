@@ -21,6 +21,13 @@ $(document).ready(function() {
 
   // Modify User button click
   //$('#btnModifyUser').on('click', modifyUser);
+    
+    $(document).on('click', '.onePlayer', function(event){
+        //$('.onePlayer').on("click", function (event) {    // this worked first time through, but not second!!
+        var parm = $(this).attr("data-parm");  // passing in the fullname
+        //write that fullname value into the  pickbet page
+        $('#IDparmHere').text(parm);
+    });
    
 
 });
@@ -47,7 +54,7 @@ function createList() {
     userArray = data;
     $('#playerul').empty(); // don't want to keep adding old li s to old li s 
      userArray.forEach(function(element) {
-            var playerInfo = element.MongoName + " No.Entered: " + element.MongoKnownVal + " Guess: " + element.MongoGuess+ " Score: " + element.MongoScore
+            var playerInfo = element.MongoName + "_" + element.MongoKnownVal + "_" + element.MongoGuess+ "_" + element.MongoScore
             $('#playerul').append('<li><a data-transition="pop" class="onePlayer" data-parm=' + 
                 playerInfo + ' href="#playerlist" > ' + playerInfo + '</a></li>' );
         });
