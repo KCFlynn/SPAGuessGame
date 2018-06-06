@@ -41,7 +41,7 @@ function createList() {
     userArray = data;
     $('#playerul').empty(); // don't want to keep adding old li s to old li s 
      userArray.forEach(function(element) {
-            var playerInfo = element.MongoName + " Value: " + element.MongoKnownVal + " Guess: " + element.MongoGuess+ " Score: " + element.MongoScore;
+            var playerInfo = element.MongoName + "Value:" + element.MongoKnownVal + "Guess:" + element.MongoGuess+ "Score:" + element.MongoScore;
             $('#playerul').append('<li><a data-transition="pop" class="onePlayer" data-parm=' + 
                 playerInfo + ' href="#playerlist" > ' + playerInfo + '</a></li>' );
         });
@@ -139,7 +139,7 @@ function GetNewScore(score, currentPlayer) {
 function setCurrent_index(playerInfo) {
     var pointer = 0;
     userArray.forEach(function(element) {
-        if (userArray[pointer].MongoName + " Value: " + userArray[pointer].MongoKnownVal + " Guess: " + userArray[pointer].MongoGuess + " Score: " + userArray[pointer].MongoScore == playerInfo) { 
+        if (userArray[pointer].MongoName + "Value:" + userArray[pointer].MongoKnownVal + "Guess:" + userArray[pointer].MongoGuess + "Score:" + userArray[pointer].MongoScore == playerInfo) { 
             // This is where our code is going wrong and causing the current index to mess up
             state.current_index = pointer;
             return;
