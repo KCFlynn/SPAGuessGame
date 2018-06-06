@@ -167,7 +167,7 @@ function GetNewScore(score, currentPlayer) {
     alert(state.current_index);
  if (avg === sumGuess)
  {
-     var score = 10;
+     var score += 10;
      //score = parseInt(score) + 10;
      element.MongoScore = score;
      state.current_score = parseInt(userArray[state.current_index].MongoScore);
