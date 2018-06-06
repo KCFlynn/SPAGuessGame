@@ -160,7 +160,7 @@ function GetNewScore(score, currentPlayer) {
      element.current_score = score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
-     (document.getElementById("score")).innerText = (state.current_score).toString();
+     (document.getElementById("score")).innerText = (element.current_score).toString();
      (document.getElementById("status")).innerText = "You Win!";
  }
  else {
@@ -189,7 +189,7 @@ function setCurrent_index(playerInfo) {
 // Modify User
 function modifyUser() {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state.current_index];
+  var userID =  userArray[];
   // do our modify on the server
   $.ajax({
     type: 'PUT',
