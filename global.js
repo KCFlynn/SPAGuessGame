@@ -5,31 +5,18 @@ var userArray = [];
 $(document).ready(function() {
 
     userArray.length = 0;
-  // Populate the user table on initial page load
-  //createList();
-
-  // Username link click
- // $('#userList table tbody').on('click','td a.linkshowuser', showUserInfo);
 
   // Add User button click
   $('#create').on('click', addNewUser);
     
   $('#calc').on('click', GetNewScore);
-
-  // Delete User link click
-  // $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
-
-  // Modify User button click
-  //$('#btnModifyUser').on('click', modifyUser);
     
     $(document).on('click', '.onePlayer', function(event){
-        //$('.onePlayer').on("click", function (event) {    // this worked first time through, but not second!!
+
         var parm = $(this).attr("data-parm");  // passing in the fullname
         //write that fullname value into the  pickbet page
         $('#IDparmHere').text(parm);
     });
-   
-
 });
 
 // Functions =============================================================
@@ -105,46 +92,12 @@ function addNewUser(event) {
     
 };
 
-/*function calculate() {
-    //alert(state.current_playerInfo);
- 
-  /*  setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
-        
-        
-        var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
-        state.current_playerInfo = which;
-        setCurrent_index(which);
-        
-         alert(state.current_index);*/
-    
-    
-   /* state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
-    (document.getElementById("score")).innerText = (state.current_score).toString();
-  /*  if(state.current_score <= 0) {
-        //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
-        setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
-        state.currentPlayerInfo = ""; 
-        //state.current_score = userArray[state.current_index].MongoScore = 0;
-        // delete them from Mongo rigth here
-        //deleteuser();
-        document.location.href = "index.html#LosePage";  // take player to lose page
-    }*/
-   /* if(state.current_score >= 10) {
-        //state.current_score = userArray[state.current_index].MongoScore = 0;  // set player back to 0
-        modifyUser();
-        (document.getElementById("status")).innerText = "You Win!";
-        //document.location.href = "index.html#WinPage";
-    }
-}*/
-
 function GetNewScore(score, currentPlayer) { 
     var sumInt = 0;
     var sum = 0;
-   //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
-    //(document.getElementById("score")).innerText = (state.current_score).toString();
+
     userArray.forEach(function(element) {
-    //score = state.current_score;
-    //currentPlayer = state.current_playerInfo;
+
         var parsedVal = parseInt(element.MongoKnownVal);
         sum = sum + parsedVal;
     
@@ -152,8 +105,6 @@ function GetNewScore(score, currentPlayer) {
     
     sumInt = parseInt(sum);
     var avg = Math.round(sumInt / userArray.length);                  
-    //alert(currentPlayer);
-    //alert(state.current_playerInfo);
     
     userArray.forEach(function(element){
     
@@ -170,7 +121,6 @@ function GetNewScore(score, currentPlayer) {
  if (avg === sumGuess)
  {
      var score = state.current_score + 10;
-     //score = parseInt(score) + 10;
      element.MongoScore = score;
      state.current_score = parseInt(userArray[state.current_index].MongoScore);
      
@@ -216,21 +166,15 @@ function modifyUser() {
       }
       else{
           alert('Error: ' + response.msg);
-      }
-      
+      }     
   })
 };
 
 // Delete User
 function deleteUser() {
-  //event.preventDefault();  // think we need this as this page is a form
-
-  // Pop up a confirmation dialog
-  //var confirmation = confirm('Are you sure you want to delete this user?');
   
   var userID =  userArray[state.current_index]._id;
   // Check and make sure the user confirmed
-  //if (confirmation === true) {
 
     // If they did, do our delete
     $.ajax({
@@ -238,10 +182,7 @@ function deleteUser() {
       url: '/users/deleteplayer/' + userID
     }).done(function( response ) {
 
-      // Check for a successful (blank) response
       if (response.msg === '') {
-        // Update the table
-        //window.location.reload()
           
           document.location.href = "#WinPage";
       }
@@ -249,9 +190,5 @@ function deleteUser() {
         alert('Error: ' + response.msg);
       }
     });
-  //}
-  //else {
-    // If they said no to the confirm, do nothing
-    // return false;
-  //}
+
 };
