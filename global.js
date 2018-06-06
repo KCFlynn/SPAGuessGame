@@ -188,7 +188,7 @@ function setCurrent_index(playerInfo) {
 
 // Modify User
 function modifyUser() {
-  var playerScore =  element.MongoScore;
+  var playerScore =  PlayerObject.MongoScore;
   var userID =  userArray[state.current_index];
   // do our modify on the server
   $.ajax({
