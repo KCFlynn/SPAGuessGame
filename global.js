@@ -157,7 +157,7 @@ function GetNewScore(score, currentPlayer) {
     
     userArray.forEach(function(element){
     
-    (document.getElementById("score")).innerText = "";
+    (document.getElementById("score")).innerText = " Zero!";
     (document.getElementById("status")).innerText = "";
         
     var sumGuess = parseInt(element.MongoGuess);
