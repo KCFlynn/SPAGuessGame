@@ -209,14 +209,13 @@ function modifyUser() {
     }).done(function( response ) {
       if(response.msg === ''){
           
-          document.location.href = "#listOfPlayers";
+          document.location.href = "#WinPage";
       }
       else{
           alert('Error: ' + response.msg);
       }
       
   })
-    document.location.href = "#Home";
 };
 
 // Delete User
