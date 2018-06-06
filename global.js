@@ -173,7 +173,7 @@ function GetNewScore(score, currentPlayer) {
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
      (document.getElementById("score")).innerText = userArray[state.current_index].MongoScore;
-     (document.getElementById("status")).innerText = "You Win!" + userArray[state.current_index].MongoName;
+     (document.getElementById("status")).innerText = "You Win! " + userArray[state.current_index].MongoName;
  }
  else {
      score = element.current_score;
@@ -224,8 +224,8 @@ function deleteUser() {
 
   // Pop up a confirmation dialog
   //var confirmation = confirm('Are you sure you want to delete this user?');
-  setCurrent_index(state.current_playerInfo)
-  var userID = userArray[state.current_index];
+  
+  var userID =  userArray[state.current_index]._id;
   // Check and make sure the user confirmed
   //if (confirmation === true) {
 
