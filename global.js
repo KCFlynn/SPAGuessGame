@@ -14,7 +14,7 @@ $(document).ready(function() {
   // Add User button click
   $('#create').on('click', addNewUser);
     
-  $('#calc').on('click', calculate);
+  $('#calc').on('click', GetNewScore);
 
   // Delete User link click
   // $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
@@ -98,7 +98,7 @@ function addNewUser(event) {
     
 };
 
-function calculate() {
+/*function calculate() {
     //alert(state.current_playerInfo);
  
   /*  setCurrent_index(state.current_playerInfo); // shouldn't need to do this, as the  state.current_index should still be accurate
@@ -111,7 +111,7 @@ function calculate() {
          alert(state.current_index);*/
     
     
-    state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
+   /* state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
   /*  if(state.current_score <= 0) {
         //(document.getElementById("ButtonBet")).style.visibility = 'hidden';
@@ -122,20 +122,20 @@ function calculate() {
         //deleteuser();
         document.location.href = "index.html#LosePage";  // take player to lose page
     }*/
-    if(state.current_score >= 10) {
+   /* if(state.current_score >= 10) {
         //state.current_score = userArray[state.current_index].MongoScore = 0;  // set player back to 0
         modifyUser();
         (document.getElementById("status")).innerText = "You Win!";
         //document.location.href = "index.html#WinPage";
     }
-}
+}*/
 
 function GetNewScore(score, currentPlayer) { 
     
-   
-    userArray.forEach(function(element) { // we only get through this once time? 
-        
+   state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
+    (document.getElementById("score")).innerText = (state.current_score).toString();
     
+    userArray.forEach(function(element) {
     //score = state.current_score;
     //currentPlayer = state.current_playerInfo;
     var sum = 0;
@@ -151,9 +151,9 @@ function GetNewScore(score, currentPlayer) {
  {
      score = score + 10;
      score = score + element.current_score;
-     
-     
      //(document.getElementById("status")).innerText = "You Win!";
+     modifyUser();
+        (document.getElementById("status")).innerText = "You Win!";
  }
  else {
      score = element.current_score;
@@ -161,7 +161,7 @@ function GetNewScore(score, currentPlayer) {
      deleteUser();
  }
         });
- return score; 
+ return score;
 }
     
 function setCurrent_index(playerInfo) {
@@ -182,7 +182,7 @@ function setCurrent_index(playerInfo) {
 // Modify User
 function modifyUser(event) {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state.current_index];
+  var userID =  userArray[state.current_index]._id;
   // do our modify on the server
   $.ajax({
     type: 'PUT',
@@ -207,7 +207,7 @@ function deleteUser(event) {
   // Pop up a confirmation dialog
   //var confirmation = confirm('Are you sure you want to delete this user?');
   setCurrent_index(state.current_playerInfo)
-  var userID = userArray[state.current_index];
+  var userID = userArray[state.current_index]._id;
   // Check and make sure the user confirmed
   //if (confirmation === true) {
 
