@@ -157,7 +157,7 @@ function GetNewScore(score, currentPlayer) {
  {
      var score = 10;
      //score = parseInt(score) + 10;
-     element.current_score = score;
+     element.MongoScore = score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
      (document.getElementById("score")).innerText = (state.current_score).toString();
