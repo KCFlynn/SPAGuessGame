@@ -239,7 +239,9 @@ function deleteUser() {
       // Check for a successful (blank) response
       if (response.msg === '') {
         // Update the table
-        window.location.reload()
+        //window.location.reload()
+          
+          document.location.href = "#WinPage";
       }
       else {
         alert('Error: ' + response.msg);
@@ -248,6 +250,6 @@ function deleteUser() {
   //}
   //else {
     // If they said no to the confirm, do nothing
-    return false;
+    // return false;
   //}
 };
