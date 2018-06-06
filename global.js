@@ -172,7 +172,7 @@ function GetNewScore(score, currentPlayer) {
      element.MongoScore = score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
-     (document.getElementById("score")).innerText = (element.current_score);
+     (document.getElementById("score")).innerText = userArray[state.current_index].MongoScore;
      (document.getElementById("status")).innerText = "You Win!";
  }
  else {
