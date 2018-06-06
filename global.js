@@ -132,7 +132,7 @@ function addNewUser(event) {
 
 function GetNewScore(score, currentPlayer) { 
     
-   state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
+   //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     (document.getElementById("score")).innerText = (state.current_score).toString();
     
     userArray.forEach(function(element) {
@@ -149,6 +149,7 @@ function GetNewScore(score, currentPlayer) {
     
  if (avg === sumGuess)
  {
+     
      score = score + 10;
      score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
@@ -161,7 +162,6 @@ function GetNewScore(score, currentPlayer) {
      deleteUser();
  }
         });
- return score;
 }
     
 function setCurrent_index(playerInfo) {
