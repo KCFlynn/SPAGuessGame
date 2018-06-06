@@ -186,9 +186,9 @@ function setCurrent_index(playerInfo) {
 };
 
 // Modify User
-function modifyUser(event) {
+function modifyUser() {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state.current_index];
+  var userID =  userArray[state.current_index].current_playerInfo;
   // do our modify on the server
   $.ajax({
     type: 'PUT',
@@ -207,13 +207,13 @@ function modifyUser(event) {
 };
 
 // Delete User
-function deleteUser(event) {
+function deleteUser() {
   //event.preventDefault();  // think we need this as this page is a form
 
   // Pop up a confirmation dialog
   //var confirmation = confirm('Are you sure you want to delete this user?');
   setCurrent_index(state.current_playerInfo)
-  var userID = userArray[state.current_index];
+  var userID = userArray[state.current_index].current_playerInfo;
   // Check and make sure the user confirmed
   //if (confirmation === true) {
 
