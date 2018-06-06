@@ -117,7 +117,6 @@ function GetNewScore(score, currentPlayer) {
     state.current_playerInfo = which;
     setCurrent_index(which); // get pointer in our array of users based on fullname
     state.current_score = parseInt(userArray[state.current_index].MongoScore);
-    alert(state.current_index);
  if (avg === sumGuess)
  {
      var score = state.current_score + 10;
