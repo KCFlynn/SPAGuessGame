@@ -132,7 +132,6 @@ function addNewUser(event) {
 
 function GetNewScore(score, currentPlayer) { 
     
-    var sumGuess = parseInt(element.MongoGuess);
    //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     //(document.getElementById("score")).innerText = (state.current_score).toString();
     userArray.forEach(function(element) {
@@ -149,7 +148,9 @@ function GetNewScore(score, currentPlayer) {
     //alert(state.current_playerInfo);
     
     userArray.forEach(function(element){
-    
+        
+    var sumGuess = parseInt(element.MongoGuess);
+        
  if (avg === sumGuess)
  {
      score = score + 10;
