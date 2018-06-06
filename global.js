@@ -180,7 +180,7 @@ function GetNewScore(score, currentPlayer) {
  }
  else {
      score = element.current_score;
-     //(document.getElementById("status")).innerText = "You Lost!";
+     (document.getElementById("status")).innerText = "You Lost!" + userArray[state.current_index].MongoName;
      deleteUser();
  }
 });
