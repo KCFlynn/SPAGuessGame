@@ -134,7 +134,7 @@ function GetNewScore(score, currentPlayer) {
     
    //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     //(document.getElementById("score")).innerText = (state.current_score).toString();
-    
+    var avg = Math.round(sumInt / userArray.length);
     userArray.forEach(function(element) {
     //score = state.current_score;
     //currentPlayer = state.current_playerInfo;
@@ -142,14 +142,13 @@ function GetNewScore(score, currentPlayer) {
         sum = sum + element.MongoKnownVal;
     var sumGuess = parseInt(element.MongoGuess);
     var sumInt = parseInt(sum);
-    var avg = Math.round(sumInt / userArray.length);
+    
 
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
     
  if (avg === sumGuess)
  {
-     
      score = score + 10;
      score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
@@ -163,6 +162,7 @@ function GetNewScore(score, currentPlayer) {
      deleteUser();
  }
         });
+ return score;
 }
     
 function setCurrent_index(playerInfo) {
