@@ -132,20 +132,23 @@ function addNewUser(event) {
 
 function GetNewScore(score, currentPlayer) { 
     
+    var sumGuess = parseInt(element.MongoGuess);
    //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     //(document.getElementById("score")).innerText = (state.current_score).toString();
-    var avg = Math.round(sumInt / userArray.length);
     userArray.forEach(function(element) {
     //score = state.current_score;
     //currentPlayer = state.current_playerInfo;
     var sum = 0;
         sum = sum + element.MongoKnownVal;
-    var sumGuess = parseInt(element.MongoGuess);
     var sumInt = parseInt(sum);
+        
+    });
     
-
+    var avg = Math.round(sumInt / userArray.length);                  
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
+    
+    userArray.forEach(function(element)){
     
  if (avg === sumGuess)
  {
@@ -161,8 +164,7 @@ function GetNewScore(score, currentPlayer) {
      //(document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
-        });
- return score;
+}
 }
     
 function setCurrent_index(playerInfo) {
