@@ -158,7 +158,7 @@ function GetNewScore(score, currentPlayer) {
     userArray.forEach(function(element){
     
     (document.getElementById("score")).innerText = " Zero!";
-    (document.getElementById("status")).innerText = " ";
+    (document.getElementById("status")).innerText = "";
         
     var sumGuess = parseInt(element.MongoGuess);
      
@@ -180,7 +180,7 @@ function GetNewScore(score, currentPlayer) {
  }
  else {
      score = element.current_score;
-     (document.getElementById("status")).innerText = "You Lost!" + userArray[state.current_index].MongoName;
+     (document.getElementById("status")).innerText = "You Lost! " + userArray[state.current_index].MongoName;
      deleteUser();
  }
 });
