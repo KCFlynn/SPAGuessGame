@@ -155,9 +155,9 @@ function GetNewScore(score, currentPlayer) {
         
  if (avg === sumGuess)
  {
-     var score = 0;
-     score = parseInt(score) + 10;
-     score = score + element.current_score;
+     var score = 10;
+     //score = parseInt(score) + 10;
+     element.current_score = score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
      (document.getElementById("score")).innerText = (state.current_score).toString();
@@ -189,7 +189,7 @@ function setCurrent_index(playerInfo) {
 // Modify User
 function modifyUser() {
   var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[state._id];
+  var userID =  userArray[state.current_index];
   // do our modify on the server
   $.ajax({
     type: 'PUT',
@@ -214,7 +214,7 @@ function deleteUser() {
   // Pop up a confirmation dialog
   //var confirmation = confirm('Are you sure you want to delete this user?');
   setCurrent_index(state.current_playerInfo)
-  var userID = userArray[state._id];
+  var userID = userArray[state.current_index];
   // Check and make sure the user confirmed
   //if (confirmation === true) {
 
