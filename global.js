@@ -139,11 +139,6 @@ function addNewUser(event) {
 
 function GetNewScore(score, currentPlayer) { 
     
-    var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
-    state.current_playerInfo = which;
-    setCurrent_index(which); // get pointer in our array of users based on fullname
-    state.current_score = parseInt(userArray[state.current_index].MongoScore);
-    
     var sumInt = 0;
     var sum = 0;
    //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
@@ -164,6 +159,11 @@ function GetNewScore(score, currentPlayer) {
     userArray.forEach(function(element){
         
     var sumGuess = parseInt(element.MongoGuess);
+     
+    var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
+    state.current_playerInfo = which;
+    setCurrent_index(which); // get pointer in our array of users based on fullname
+    //state.current_score = parseInt(userArray[state.current_index].MongoScore);
         
  if (avg === sumGuess)
  {
