@@ -149,6 +149,7 @@ function GetNewScore(score, currentPlayer) {
     
  if (avg === sumGuess)
  {
+     
      score = score + 10;
      score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
@@ -162,7 +163,6 @@ function GetNewScore(score, currentPlayer) {
      deleteUser();
  }
         });
- return score;
 }
     
 function setCurrent_index(playerInfo) {
