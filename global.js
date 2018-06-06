@@ -157,7 +157,7 @@ function GetNewScore(score, currentPlayer) {
  {
      var score = 10;
      //score = parseInt(score) + 10;
-     element.current_score = score;
+     element.MongoScore = score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
      (document.getElementById("score")).innerText = (element.current_score).toString();
@@ -188,8 +188,8 @@ function setCurrent_index(playerInfo) {
 
 // Modify User
 function modifyUser() {
-  var playerScore =  parseInt(state.current_score);
-  var userID =  userArray[];
+  var playerScore =  PlayerObject.MongoScore;
+  var userID =  userArray[state.current_index];
   // do our modify on the server
   $.ajax({
     type: 'PUT',
