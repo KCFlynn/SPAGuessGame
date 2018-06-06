@@ -132,8 +132,8 @@ function addNewUser(event) {
 
 function GetNewScore(score, currentPlayer) { 
     
-   state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
-    (document.getElementById("score")).innerText = (state.current_score).toString();
+   //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
+    //(document.getElementById("score")).innerText = (state.current_score).toString();
     
     userArray.forEach(function(element) {
     //score = state.current_score;
@@ -153,7 +153,8 @@ function GetNewScore(score, currentPlayer) {
      score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
-        (document.getElementById("status")).innerText = "You Win!";
+     (document.getElementById("score")).innerText = (state.current_score).toString();
+     (document.getElementById("status")).innerText = "You Win!";
  }
  else {
      score = element.current_score;
