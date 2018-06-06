@@ -163,7 +163,7 @@ function GetNewScore(score, currentPlayer) {
     var which = $('#IDparmHere').text();  // get the full name out of the hidden HTML
     state.current_playerInfo = which;
     setCurrent_index(which); // get pointer in our array of users based on fullname
-    //state.current_score = parseInt(userArray[state.current_index].MongoScore);
+    state.current_score = parseInt(userArray[state.current_index].MongoScore);
     alert(state.current_index);
  if (avg === sumGuess)
  {
@@ -200,7 +200,7 @@ function setCurrent_index(playerInfo) {
 
 // Modify User
 function modifyUser() {
-  var playerScore =  userArray[state.current_index].MongoScore;
+  var playerScore =  parseInt(state.current_score);
   var userID =  userArray[state.current_index]._id;
   // do our modify on the server
   $.ajax({
