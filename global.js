@@ -133,13 +133,14 @@ function addNewUser(event) {
 function GetNewScore(score, currentPlayer) { 
     
     var sumInt = 0;
-    var sum;
+    var sum = 0;
    //state.current_score = GetNewScore(state.current_score, userArray[state.current_index]);  // run one cycle of the game
     //(document.getElementById("score")).innerText = (state.current_score).toString();
     userArray.forEach(function(element) {
     //score = state.current_score;
     //currentPlayer = state.current_playerInfo;
-        sum = sum + element.MongoKnownVal;
+        var parsedVal = parseInt(element.MongoKnownVal);
+        sum = sum + parsedVal;
     
     });
     
