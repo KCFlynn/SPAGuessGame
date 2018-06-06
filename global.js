@@ -148,7 +148,7 @@ function GetNewScore(score, currentPlayer) {
     //alert(currentPlayer);
     //alert(state.current_playerInfo);
     
-    userArray.forEach(function(element)){
+    userArray.forEach(function(element){
     
  if (avg === sumGuess)
  {
@@ -164,7 +164,7 @@ function GetNewScore(score, currentPlayer) {
      //(document.getElementById("status")).innerText = "You Lost!";
      deleteUser();
  }
-}
+});
 }
     
 function setCurrent_index(playerInfo) {
