@@ -156,7 +156,7 @@ function GetNewScore(score, currentPlayer) {
  if (avg === sumGuess)
  {
      var score = 0;
-     score = score + 10;
+     score = parseInt(score) + 10;
      score = score + element.current_score;
      //(document.getElementById("status")).innerText = "You Win!";
      modifyUser();
